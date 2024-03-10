@@ -1,0 +1,98 @@
+# IP-EX-5
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    background-color: #710044;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .form-container {
+    background-color: #710044;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .form-container form {
+    background-color: #710044;
+  }
+</style>
+
+<script>
+function validateForm() {
+  let name = document.forms["myForm"]["name"].value;
+  let email = document.forms["myForm"]["email"].value;
+  let password = document.forms["myForm"]["password"].value;
+  let phoneNumber = document.forms["myForm"]["phone"].value;
+  let gender = document.forms["myForm"]["gender"].value;
+  let language = document.forms["myForm"]["language"].value;
+  let zipCode = document.forms["myForm"]["zipcode"].value;
+  let about = document.forms["myForm"]["about"].value;
+
+  if (name == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+  if (email == "") {
+    alert("Email is required");
+    return false;
+  }
+  if (password == "") {
+    alert("Password is required");
+    return false;
+  }
+  if (phoneNumber == "") {
+    alert("Phone number is required");
+    return false;
+  }
+  if (gender == "") {
+    alert("Gender must be selected");
+    return false;
+  }
+  if (language == "") {
+    alert("Language must be selected");
+    return false;
+  }
+  if (zipCode == "") {
+    alert("Zip code is required");
+    return false;
+  }
+  if (about == "") {
+    alert("Please tell us about yourself");
+    return false;
+  }
+}
+</script>
+</head>
+<body>
+
+<div class="form-container">
+  <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+    Name: <input type="text" name="name"><br><br>
+    Email: <input type="text" name="email"><br><br>
+    Password: <input type="password" name="password"><br><br>
+    Phone Number: <input type="text" name="phone"><br><br>
+    Gender: 
+    <input type="radio" name="gender" value="male"> Male
+    <input type="radio" name="gender" value="female"> Female
+    <input type="radio" name="gender" value="other"> Other<br><br>
+    Language(s) Spoken:
+    <select name="language">
+      <option value="">Select Language</option>
+      <option value="english">English</option>
+      <option value="spanish">Spanish</option>
+      <option value="french">French</option>
+    </select><br><br>
+    Zip Code: <input type="text" name="zipcode"><br><br>
+    About: <textarea name="about" rows="5" cols="40"></textarea><br><br>
+    <input type="submit" value="Register" style="background-color: white; color: black;">
+  </form>
+</div>
+
+</body>
+</html>
